@@ -1,0 +1,38 @@
+Costrudizone del dataset tipologia : snowball sempling/traversal based -> questo porta a sampling bias, e ne seguiranno i seguenti bias:
+•	La densità e la completezza del grafo saranno maggiori verso il presente rispetto alla data temporale in cui settiamo di prendere le informazioni
+•	Hub e prossimity bias i nodi dei regnanit per costruzione della rete tenderanno ad avere un grando maggiore, inoltre gli antenati con altro grado di connesiione (hub matrimoniale) avranno probabilità molto maggiore di essere inclusi
+Metriche
+Degree: analizzabile solo in finestre temporali in quanto falsata dal modo di acquisizione dei dati (non ne ho trovato un significato)
+Betweenness centrality:  analizza quando il regnante si trova nei cammini minimi -> quanto tende ad unire due famiglie. Individua quindi quali individui o casate agiscono da bridge tra famiglie o aree geocrafiche diverse. 
+Soprattuto nel passato ha problematiche di omissione e frammentazione portando ad un accentramento dei nodi centrali
+Appicabile sia per intero che su sotto categorie temporali
+Autovettore centralita e pageRank !
+Misura l’influenza di un regnante, non in base al suo grado, ma in base a quanto sono centrali le persone a cui è legato. Il page rank misurerebbe il grado dinastico elevato.
+Per costruzione del dataset la centralita tendera ad essere sui regnanti che saranno centrali in quanto è da loro che prenderemo le parentele
+Harmonic clossness centrality 
+Misura quanto è mediamente vicino agli altri nodi della rete. Sbilanciata anche in questo caso vero i nodi piu recenti. Utilizzabile solo per sottoreti per periodo storico
+Altro
+Controllare se è tutto connesso
+Coefficenza di clustering !
+Misura se due parenti di un re sono imparentati tra loro, analizza l’endogamia locale e sturctural holes
+Se non mancsno dati potrebbe essere una delle metriche migliori
+Comunity detection
+Trova blocchi di famiglie che si sono sposate prevalentemente tra loro rispetto al rsto della rete. Potrebbe trovare le casate??
+Si puo applicare in due modi:
+-	O prendento un arco temporale
+-	O unendo in nodi in casate
+Miscelamento Assortivo
+Misura se i regnaneti tendevano a legarsi con noi con attributi simili, tipo religione, nazionalita ecc
+Dobbiamo verificare se abbiamo i dati sufficenti per questo. Anche qui dobbiamo misurare per epoca storica
+Triad census
+Ricerca di cicli in un grafo diretto
+Dovrebbe essere ottimo
+
+
+Risultato
+Le metodologie piu interessanti credo siano Triad Census/coefficenza di clusering, Miscelamento assortivo  e comunity detection
+Tutte le altre metriche presentano degli enormi bias basati sulla costruzione del dataset
+
+Domande:
+Noi prenidamo solo figli e nipoti o anche padri e nonni?
+Mogli anche dei gili e nipoti
