@@ -1,0 +1,79 @@
+## +- X anni da questi eventi:
+
+1618 - 1648 guerra dei 30 anni
+1789 rivoluzione francese
+1803 - 1815 guerre napoleoniche
+1915 - 1918 prima guerra mondiale
+1555 pace di augusta
+1815 congresso di vienna
+1797 trattato di campoformio
+1798 invasione stato pontificio (poi restaurato nel 1815)
+1870 breccia di porta pia
+
+metriche:
+- assortatività nominale sulle casate: misura l'omofilia. vedo se i matrimoni si chiudono oppure si aprono
+- modularità: 
+- transitività: misura la chiusura triadica -> l'alleato del mio alleato diventa mio alleato
+- densità del grafo per capire se le misure cambiano perchè sono cambiate o perchè ho meno nodi
+
+## metriche ogni 50 anni di persone vive (distanza minima tra due regni)
+
+metriche:
+- distanza geodetica: dati due regni A e B, calcola il cammino minimo tra due monarchi -> ottengo matrice delle distanze
+- largest connected component: se tutti sonno connessi
+- effetto small world
+- tutte le altre(?)
+
+## nodi=casate, archi=#matrimoni
+
+metriche: 
+- potenza casate: numero di matrimoni con tutte le altre casate
+- endogamia: rapporto tra matrimoni interni con stesse casate e potenza casate
+- Indice di Herfindahl-Hirschman: se una casata si sposa sempre con la stessa o diversifica
+
+## matrimoni tra parenti -> calcolo antenati comuni
+prendo coppie marriage e guardo i due nodi del blood e calcolo il loro cammino minimo (esclusi i figli)
+
+metriche:
+- analizzo la distanza: 2(fratellastri), 3(zio-nipote), 4(cugini)
+- Coefficiente di Consanguineità di Wright: due persone che si sposano quanti parenti hanno in comune
+
+## rimozioni di individui(random, betweenness alta) per capire come cambia una rete
+
+metriche: 
+- vedo il numero di componenti connesse
+- ?
+
+## distanza genealogica tra 2 re
+
+metriche:
+- distanza geodetica
+- Teorema di Menger: misura la ridondanza del legame, se son o uniti da un solo cammino allora sono poco fragili, mentre più cammini sono più legati storicamente
+
+## quanto cambia la rete se tolgo archi: marriage -> blood -> throne
+
+metriche:
+- ?
+
+## grafo solo maschi e solo femmine
+
+metriche:
+- esistono archi marriage?
+- ?
+
+## suggerimenti esterni
+
+### nodi ponte invisibili
+Costruzione: Costruisci un grafo proiettato $G_{\text{monarchs}}$ contenente solo i nodi con monarch = T. Collega due monarchi $u$ e $v$ se nel grafo completo esiste un cammino tra loro che attraversa esclusivamente nodi con monarch = F, assegnando all'arco un peso inversamente proporzionale alla lunghezza $k$ del cammino ($w = 1/k$).Informazioni estraibili: Questo modello mette in luce il ruolo strutturale dei connettori non-regnanti (tipicamente principesse date in sposa a corti straniere che non diventano mai sovrane regnanti, ma sono sorelle di un re e madri di un altro). Calcolando quante volte un nodo monarch = F giace sui cammini minimi tra due nodi monarch = T diversi, puoi identificare gli individui non-incoronati che hanno avuto il maggiore impatto geopolitico nel legare tra loro le corone europee.
+
+metriche: 
+- Lunghezza media dei ponti $\langle k \rangle$ in $G_{\text{monarchs}}$: indica quanti intermediari non regnanti servivano mediamente per collegare due sovrani nei diversi secoli.
+- Effective Size e Constraint di Burt (calcolati sull'ego-network del nodo monarch = F): distingue un ponte semplice ($k=2$, es. una principessa figlia di un re e moglie di un altro) da un vero "super-connettore" dinastico (basso Constraint, alta Effective Size, come la Regina Vittoria o Cristiano IX di Danimarca per i loro discendenti/coniugi non incoronati) che collega contemporaneamente 4 o 5 corone diverse.
+
+### ego network
+Normalizzazione locale: Invece di confrontare metriche globali che premiano le dinastie più documentate, estrai per ogni monarca la sua ego-network a raggio fisso $r \in \{2, 3\}$ (tutti i nodi raggiungibili entro 2 o 3 salti di parentela/matrimonio). Su ciascuna ego-network puoi calcolare l'entropia delle casate presenti (quanto è "internazionale" il vicinato immediato di quel re rispetto a un vicinato composto solo dalla stessa house).Analisi della permeabilità tramite person_type: Usando l'attributo person_type, puoi misurare la distanza minima tra ogni monarca e il primo nodo non-reale/non-nobile nella sua ego-network. Tracciare questa distanza media per secolo mostra con precisione quando le monarchie europee smettono di essere caste completamente chiuse e iniziano a integrare membri della piccola nobiltà, dell'alta borghesia o matrimoni morganatici tra Ottocento e Novecento.
+
+metriche: 
+- Indice di Blau: esprime la probabilità esatta che due parenti/affini estratti a caso entro r salti dal sovrano appartengano a casate diverse
+- Distanza minima di permeabilità ($d_{\text{non-royal}}(u)$) e Ego-Permeability Ratio: la distanza geodetica minima da $u$ al primo nodo con person_type non reale/non alta nobiltà, affiancata dalla percentuale di nodi non reali presenti entro $r=3$. Tracciare mediana e scarto interquartile (IQR) di queste due metriche per secolo mostra con precisione la transizione ottocentesca e novecentesca verso i matrimoni morganatici e borghesi.
+- E-I Index di Krackhardt e Stern: calcolato come $(E - I) / (E + I)$, dove $E$ sono i nodi nell'ego-network appartenenti a casate diverse da quella del monarca e $I$ quelli della stessa casata. Varia da $-1$ (chiusura totale nella propria dinastia) a $+1$ (apertura totale verso l'esterno).
