@@ -33,6 +33,42 @@ Risultato
 Le metodologie piu interessanti credo siano Triad Census/coefficenza di clusering, Miscelamento assortivo  e comunity detection
 Tutte le altre metriche presentano degli enormi bias basati sulla costruzione del dataset
 
+Approfondimenti
+Triad Census:
+Si appilca ai grafi diretti, considera i nodi in terzetti, cercando di assumere che gli amici dei miei amici siano miei amici.
+Ci permetterebbe di analizzare alleanze e consanguineità. (Dovremmo ferificare se troppo limitante)
+Limitato ovviamente dalla tipologia di campionamento, le triadi aumenteranno nel presente per maggiori quantità di informazioni.
+Applicabili su finestre temporali -> riducendo il sampling bias ci permetterà di analizzare l’evoluzione nel tempo dell’endogamia. Applicando Ego network estese: tutti i nodi di una casata presa in analisi diventano uno unico nodo (e possiabilimente anche mariti o figli) permettendo di capire quando una famiglia tendesse sposarsi all’interno o all’esterno.
+Coefficenza di clustering:
+Quantifica la densita di triadi chiuse: quindi la probabilità che una triade formi un triangolo.
+Ne esistono due forme:
+•	Locale: quanto sia chiusa o densa una rete intorno ad uno nodo i (magari intorno ai re)
+•	Globale: esprime la transivita complessiva dell’intera rete
+Negli archi marriage
+Quindi alto clustering locale porta ad un alta endogamila locale.
+Se il clustering locale dei vicini o dello stesso è basso significa che ha fatto matrimoni strategici
+Nei archi blood
+	Endogamia
+Ovviamente per come costruiamo il grafo ci possiamo perdere nodi. E nelle epoche acntiche la mancanza di familiari lontani allontanera la parentela
+Osservazione, nei grafi rali i nodi ad altro grado tendono ad avere grado di clustering piu basso perche tendono ad unire comunità diverse
+Apllicabile:
+	Per secoli in modo da calcolare l’endogamia per gruppi di informazioni coerenti
+	Aggregando i nodi per casata, per calcolare le allenze tra casate?
+	Calcolando il clustering sui soli matrimoni: capendo se determinate casate tendevano amggiormente ad avere matrimoni endogami rispetto a casate che dendevano a fare maggiormente da broker !!
+Assortività
+Misura la tendenza dei nodi di una rete ad unirsi con nodi con caratteristiche analoghe alle proprie.
+Si puo fare per paese, religione e anche eta: banale ma magati possiamo notare che il regnante si sposa tendenzialmente con qualcuno di piu giovane o invece che a prescindere dal sessio del regnante la moglie è sempre la più giovane o se quando si sposano due persone di casate diverse la differenza di età media è maggiore rispetto a due persone della stessa casata. !!
+Ovviamente per la natura del dataset non ci possiamo basare sul grado. Ma possiamo considerare sottoreti temporali e da calcolare quasi esclusivamente su nodi di tipo marriege
+Comunity detection
+Determinare quali nodi hanno maggior interconnesisone tra di loro rispetto ad altri.
+Questo ci potrebbe determinare quale gruppi di stati erano alleati o in relazione tra loro e se ci sono delle dinastie che rimangono isolate rispetto alle altre.
+NON dobbiamo applicare questa metrica su tutta la rete in quanto cio aggregherebbe più per epoca che per alleanze. Dobbiamo perciò calcolarle su archi temporali e magari analizzare se le alleanze sono durature nel tempo o no.
+E sempre a causa del sempling le comunità piu antiche risulteranno molto poco interconnesse.
+Possiamo anche appligarlo per casate per avere piu una visione macroscopica delle alleanze sul grafo intero !!
+
+
+
+
 Domande:
 Noi prenidamo solo figli e nipoti o anche padri e nonni?
 Mogli anche dei gili e nipoti
