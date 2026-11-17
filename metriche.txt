@@ -1,0 +1,15 @@
+metriche:
+
+- assortività (quando si fa per religione, non dobbiamo prendere in termini assoluti ma soltanto quando il matrimonio ha una religione, quindi bisogna tenere conto dei matrimoni che sono rilevanti alla metrica)
+- community detection (arco temporale e no)
+- effetto small world (arco temporale)
+- endogamia : 1-community detection
+- Indice di Herfindahl-Hirschman vs community detection
+- prendo coppie marriage e guardo i due nodi del blood e calcolo il loro cammino minimo (esclusi i figli) => li conto
+- Coefficiente di Consanguineità di Wright: due persone che si sposano quanti parenti hanno in comune
+- rimozioni di individui(2/3) mirati scelti da noi => su cui calcolo le metriche imporanti
+- distanza genealogica tra 2 re => Teorema di Menger + cammino minimo
+- esistono archi marriage tra lo stesso sesso
+- clustering: dato distanza nodo i-re, e la coppia i-j marriage, calcolo la media della distanza tra i-j / re-j
+- clustering globale
+- 
