@@ -1,0 +1,14 @@
+Le metriche funzionano assumendo che non ci sia:
+-la stessa religione con due nomi diversi
+-il campo monarca funzioni
+
+Per prima cosa calcoliamo la percentuale di matrimoni che hanno entrmabi i cogniugi con il valore valido
+Poi calcoliamo l'assortivita per quel campo.
+Questo ci da una visione peraziale perché ci puo essere correlazione tra i due campi ma se la correlazione è comunque minore rispetto a quell'epoca (tra i cittadini ad esempio) ci da l'informazione opposta.
+Quindi calcoliamo le stesse metriche tra i matrimoni che hanno almeno un nodo monarca 
+E tra quelli che non hanno nessun nodo monarca e confrontiamo i risultato
+A questo punto diventa interessante notare l'andamento dell'assortivita nel tempo: 
+- nel passato era più importante sposarsi con caratteristiche diverse per creare il potere e nel presente rafforzare la propria importanza e il proprio simboo?
+fino al 1650 la correlazione era molto maggiore tra i non regnati rispetto ai regnanti
+dal 1650 il trend si inverte
+Per quanto riuarda la nazione è costante nel tempo che i regnanti tendono a sposarsi maggiormente con qualcuno di un altro paese rispetto ai non regnanti
