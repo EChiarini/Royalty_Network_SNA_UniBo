@@ -1,0 +1,7 @@
+Assumendo che il campo house sia corretta e per ogni house esiste un solo identificativo
+
+Il campo in cui ha più senso applicarla è utilizzandola su tutto il grafo per casata, per vedere se ci sono delle casate che tendonon maggiormente ad allontanarsi e nelle fasce temporali per vedere le allenze durante i secoli e magari notare se si mantengono con l'avanzare del tempo.
+non ha senso applicarla su tutta la rete perché tenderebbe a raggruppare per eta. 
+Tutto ciò considerando gli archi matrimonio in quanto sono gli unici su cui si può scegliere
+
+Ancora nessuna analisi fattibile senza un dataset corretto
