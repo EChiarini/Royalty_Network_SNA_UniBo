@@ -1,0 +1,8 @@
+Comunity detection vs casata
+Cercare di verificare se casate tendono ad avere una comunity detection alta.
+Quindi le comunita che rileviamo riflettono le casate o formano colazioni multi casata
+Possiamo definire il concetto di purità: quanto una comunità è fatta solo da membri della stessa casata. formula..
+definiamo 3 casi 
+	purita >80% comunità monolitiche, forte isolamento dinastico e alta endogamia interna .
+	purita 40-80% gruppo ristretto di casate, blocco geopolitico integrato
+	putita <40 comunità eterogenee
