@@ -1,0 +1,4 @@
+Il codice puo richiedere revisioni
+Calcoliamo il camminimo minimo tra i nodi cogniugi, ingorando tutti gli archi con i nodi che hanno data di nascita maggiore dei cniugi quindi i figli. lo calcoliamo in due versioni prima solo con i nodi bload e poi con tutti i nodi
+
+Potrebbe e dobrebbe essere calcolata su un grafo diretto. é estao applicato su un grafo indiretto, potrebbe richiedere modifiche
